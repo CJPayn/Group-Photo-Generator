@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Untitled Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		
+		<div class="app">
+			<div class="settings">
+				<input onChange="imgUpload()" type="file" id="selected-image" accept="image/*" />
+				<div id="position">
+					<button onClick="moveImage(-10, -10)">↖️</button>
+					<button onClick="moveImage(0, -10)">⬆️</button>
+					<button onClick="moveImage(10, -10)">↗️</button>
+					<br>
+					<button onClick="moveImage(-10, 0)">⬅️</button>
+					<button onClick="resetImage()">🔄</button>
+					<button onClick="moveImage(10, 0)">➡️</button>
+					<br>
+					<button onClick="moveImage(-10, 10)">↙️</button>
+					<button onClick="moveImage(0, 10)">⬇️</button>
+					<button onClick="moveImage(10, 10)">↘️</button>
+				</div>
+				<input type="range" class="slider" id="zoom" min="0" max="99" value="0">
+				<input type="range" class="slider" id="rotate" min="-15" max="15">
+				<select name="crest-one" id="crest-one">
+    				<option value="">Left Crest</option>
+    				<option value="honington">RAF Honington</option>
+    				<option value="Admin">Admin</option>
+    				<option value="Official Group">Official Group</option>
+    				<option value="Portrait">Portrait</option>
+    				<option value="Sports">Sports</option>
+    				<option value="Trade Training">Trade Training</option>
+    				<option value="ID Photo">ID Photo</option>
+    				<option value="Honours & Awards">H&A</option>
+    				<option value="Other (Specify)">Other</option>
+  				</select>
+				<select name="crest-two" id="crest-two">
+    				<option value="">Right Crest</option>
+    				<option value="PR/Media">PR/Media</option>
+    				<option value="Admin">Admin</option>
+    				<option value="Official Group">Official Group</option>
+    				<option value="Portrait">Portrait</option>
+    				<option value="Sports">Sports</option>
+    				<option value="Trade Training">Trade Training</option>
+    				<option value="ID Photo">ID Photo</option>
+    				<option value="Honours & Awards">H&A</option>
+    				<option value="Other (Specify)">Other</option>
+  				</select>
+
+			</div>
+			<div class="mock-up">
+				<div class="badge-one">
+					<img src="img/honington.png" width="150px">
+				</div>
+				<div class="center-zone">
+					<div id="div-h1"><h1 id="names-h1" onClick="namesEdit('h1')">FP Wing</h1></div>
+					<div id="div-h2"><h2 id="names-h2" onClick="namesEdit('h2')">10 April 2024</h2></div>
+					<div id="photo-frame">
+						<img id="group-photo" width="800" height="500" src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/09/take-large-group-photos-with-everyone-in-focus-big-group.jpg">
+					</div>
+					<div id="div-p1"><p id="names-p1" onClick="namesEdit('p1')">Cpl Jones - Cpl Jones - Cpl Jones - Cpl Jones - Cpl Jones - Cpl Jones</p></div>
+					<div id="div-p2"><p id="names-p2" onClick="namesEdit('p2')">FS Smith - FS Smith - FS Smith - FS Smith - FS Smith - FS Smith - FS Smith - FS Smith</p></div>
+					<div id="div-p3"><p id="names-p3" onClick="namesEdit('p3')">Sqn Ldr Leader - Sqn Ldr Leader - Sqn Ldr Leader - Sqn Ldr Leader - Sqn Ldr Leader</p></div>
+				</div>
+				<div class="badge-two">
+					<img src="img/honington.png" width="150px">
+				</div>
+			</div>
+		</div>
+		
+		<script src="main.js"></script>
+	</body>
+</html>
