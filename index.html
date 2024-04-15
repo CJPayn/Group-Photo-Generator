@@ -3,14 +3,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>DW Group Phot Gen</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		
 		<div class="app">
 			<div class="settings">
-				<input onChange="imgUpload()" type="file" id="selected-image" accept="image/*" />
+				<label for="selected-image" id="image-select">
+        			Select Photo
+				</label>
+				<input onChange="imgUpload()" type="file" id="selected-image" accept="image/*" style="display:none;"/>
 				<div id="position">
 					<button onClick="moveImage(-10, -10)">↖️</button>
 					<button onClick="moveImage(0, -10)">⬆️</button>
@@ -32,38 +35,51 @@
 					Rotate
 					<input type="range" class="slider" id="rotate" min="-15" max="15">
 				</label>
-				<select id="crest-one" onChange="crestType('one')">
+				<label>
+					Title Size
+					<input type="range" class="slider" id="names-h1-slider" value="35" min="20" max="70">
+				</label>
+				<label>
+					Date Size
+					<input type="range" class="slider" id="names-h2-slider" min="15" max="50" value="30">
+				</label>
+				<label>
+					Names Size
+					<input type="range" class="slider" id="names-p-slider" min="10" max="25" value="17">
+				</label>
+				<select class="drop-down" id="crest-one" onChange="crestType('one')">
     				<option value="">Left Crest</option>
     				<option value="stn">Station Crest</option>
     				<option value="sqn">Squadron Crest</option>
   				</select>
-				<select id="crest-one-selection" onChange="crestSelection('one')">
+				<select class="drop-down" id="crest-one-selection" onChange="crestSelection('one')">
   				</select>
-				<select id="crest-two" onChange="crestType('two')">
+				<select class="drop-down" id="crest-two" onChange="crestType('two')">
     				<option value="">Right Crest</option>
     				<option value="stn">Station Crest</option>
     				<option value="sqn">Squadron Crest</option>
   				</select>
-				<select id="crest-two-selection" onChange="crestSelection('two')">
+				<select class="drop-down" id="crest-two-selection" onChange="crestSelection('two')">
   				</select>
+				<button onClick="printDiv('mock-up')">Print</button>
 
 			</div>
-			<div class="mock-up">
+			<div class="mock-up" id="mock-up">
 				<div class="badge-one">
-					<img id="crest-one-place" src="img/hon.png" width="150px">
+					<img id="crest-one-place" src="img/hon.png" width="100%">
 				</div>
 				<div class="center-zone">
-					<div id="div-h1"><h1 id="names-h1" onClick="namesEdit('h1')">Engineering & Logistics Wing</h1></div>
+					<div id="div-h1"><h1 id="names-h1" font-size="1000px" onClick="namesEdit('h1')">Engineering & Logistics Wing</h1></div>
 					<div id="div-h2"><h2 id="names-h2" onClick="namesEdit('h2')">10 April 2024</h2></div>
 					<div id="photo-frame">
-						<img id="group-photo" width="100%"  src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/09/take-large-group-photos-with-everyone-in-focus-big-group.jpg">
+						<img id="group-photo"  src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/09/take-large-group-photos-with-everyone-in-focus-big-group.jpg">
 					</div>
 					<div class="names" id="div-p1"><p id="names-p1" onClick="namesEdit('p1')">Cpl Jones - Cpl Jones - Cpl Jones - Cpl Jones - Cpl Jones - Cpl Jones</p></div>
 					<div class="names" id="div-p2"><p id="names-p2" onClick="namesEdit('p2')">FS Smith - FS Smith - FS Smith - FS Smith - FS Smith - FS Smith - FS Smith - FS Smith</p></div>
 					<div class="names" id="div-p3"><p id="names-p3" onClick="namesEdit('p3')">Sqn Ldr Leader - Sqn Ldr Leader - Sqn Ldr Leader - Sqn Ldr Leader - Sqn Ldr Leader</p></div>
 				</div>
 				<div class="badge-two">
-					<img id="crest-two-place" src="img/hon.png" width="150px">
+					<img id="crest-two-place" src="img/hon.png" width="100%">
 				</div>
 			</div>
 		</div>

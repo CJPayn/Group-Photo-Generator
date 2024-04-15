@@ -11,6 +11,9 @@ const oneCrestSelection = document.getElementById("crest-one-selection")
 const twoCrestSelection = document.getElementById("crest-two-selection")
 const crestOnePlace = document.getElementById("crest-one-place")
 const crestTwoPlace = document.getElementById("crest-two-place")
+const titleFontSlider = document.getElementById("names-h1-slider")
+const dateFontSlider = document.getElementById("names-h2-slider")
+const namesFontSlider = document.getElementById("names-p-slider")
 const today = new Date()
 let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] 
 document.getElementById("names-h2").innerHTML = `${today.getDate()} ${month[today.getMonth()]} ${today.getFullYear()}`
@@ -25,9 +28,26 @@ let rotationSliderState = rotationSlider.value
 let zoomSlider = document.getElementById("zoom")
 let zoomSliderState = zoomSlider.value
 let imagePosition = [0,0]
+let divEdit = ""
+let curClass = ""
 tgtImage.style.transform = `scale(1) rotate(0deg)`
 oneCrestSelection.style.display = "none"
 twoCrestSelection.style.display = "none"
+
+titleFontSlider.addEventListener("input", (event) => {
+	document.getElementById(`names-h1`).style.fontSize = titleFontSlider.value  + "px"
+});
+
+dateFontSlider.addEventListener("input", (event) => {
+	document.getElementById(`names-h2`).style.fontSize = dateFontSlider.value  + "px"
+});
+
+namesFontSlider.addEventListener("input", (event) => {
+	curClass = document.getElementsByClassName("names")
+	for (let i = 0; i < curClass.length; i++) {
+		document.getElementById(`names-p${[i+1]}`).style.fontSize = namesFontSlider.value  + "px"
+	}
+});
 
 function imgUpload() {
 	let files = document.getElementById("selected-image").files[0]
@@ -45,10 +65,19 @@ function resetImage() {
 	tgtImage.style.transform = `scale(1) rotate(0deg)`
 	imagePosition = [0,0]
 	moveImage(0,0)
+	titleFontSlider.value = 35
+	document.getElementById(`names-h1`).style.fontSize = "35px"
+	dateFontSlider.value = 30
+	document.getElementById(`names-h2`).style.fontSize = "30px"
+	namesFontSlider.value = 17
+	curClass = document.getElementsByClassName("names")
+	for (let i = 0; i < curClass.length; i++) {
+		document.getElementById(`names-p${[i+1]}`).style.fontSize = "17px"
+	}
 }
 
 function namesEdit(section) {
-	let divEdit = `div-${section}`
+	divEdit = `div-${section}`
 	if (focus === false) {
 		document.getElementById(divEdit).innerHTML = `<input type="text" id="names-${section}-edit" value="${document.getElementById('names-'+section).innerHTML}"><br><button onclick="namesDone('${section}')">Confirm</button>`
 		focus = true
@@ -144,6 +173,17 @@ function crestSelection(input) {
 	}
 }
 
+
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).outerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     //window.print();
+
+     //document.body.innerHTML = originalContents;
+}
 //rotationSlider.addEventListener("input", (event) => {
 //	rotationSliderState = rotationSlider.value
 //	if (zoomSliderState < (Math.abs(rotationSlider.value) * 3)) {

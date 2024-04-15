@@ -1,48 +1,81 @@
 /* CSS Document */
-body {
-	position: fixed;
-  	top: 50%;
-  	left: 50%;
-  	margin-top: -425.5px;
-  	margin-left: -687.5px;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+@media print{
+	@page {size: landscape;
+	margin: 0}
+	.settings {visibility: hidden}
+  	.mock-up {
+    visibility: visible;
+    position: absolute;
+		border: none;
+		width: 95%;
+  	}
+	h1 {font-size: 500px}
+	#names-p2 {font-size: 10%}
 }
 
+body {
+	margin: 1% 3%;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	
+}
+
+@media (max-width: 870px) {
+	.app {
+		visibility: hidden;
+	}
+}
+
+#div-h1 {font-size: 35px}
 h1 {
-	font-size: 250%;
 	margin: 3% 0% 0%;
+	font-size: 1em;
 }
 
 h2 {
 	margin: 2% 0%;
+  	font-size: 30px;
+}
+
+p {
+	font-size: 1em;
 }
 .app {
-	margin: auto;
-	width: 1375px;
-	border: solid;
+	aspect-ratio: 55 / 34;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	max-height: 90vh;
+	margin: auto;	
 }
+
 .settings {
-	padding-top: 10px;
+	padding-top: 20px;
 	border: 3px solid black;
 	border-radius: 10px;
-	width: 150px;
-	height: 841px;
+	height: fill;
   	text-align: center;
+	margin-right: 0.5%;
+	flex: 0 0 150px;
+	overflow: scroll;
 	
 }
 
-#selected-image {
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
+#image-select {
+  	border: 2px solid #222222;
+	border-radius: 7px;
+  	padding: 6px 12px;
+	margin: 5px 0px 50px;
+  	cursor: pointer;
+}
+
+#position {
+	margin: 17px 0px 5px;
 }
 
 .slider {
-	width: 100px;
+	width: 120px;
 	padding: 0px;
 	margin: 5px 2px;
+  	cursor: pointer;
 }
 
 .settings #position button {
@@ -50,6 +83,14 @@ h2 {
 	background-color: white;
 	font-size: 30px;
 	padding: 0;
+  	cursor: pointer;
+}
+
+.drop-down {
+	margin: 3px 0px;
+	width: 90%;
+	border: 1.5px solid #222222;
+	border-radius: 4px;
 }
 
 .mock-up {
@@ -57,8 +98,7 @@ h2 {
 	justify-content: center;
 	border: 3px solid black;
 	border-radius: 10px;
-	width: 1200px;
-	height: 851px;
+	aspect-ratio: 1.45 / 1;
 }
 
 
@@ -66,16 +106,22 @@ h2 {
 	align-self: flex-end;
 	padding-bottom: 20px;
 	margin-left: 30px;
+	object-fit: cover;
+	flex: 1;
 }
 
 .badge-two {
 	align-self: flex-end;
 	padding-bottom: 20px;
 	margin-right: 30px;
+	object-fit: cover;
+	flex: 1;
 }
 
 .center-zone {
 	text-align: center;
+	width: 60%;
+	flex: 5;
 }
 
 .names {
@@ -94,14 +140,15 @@ input {
 }
 
 #photo-frame {
-	width: 100%;
-    height: 63%;
+	aspect-ratio: 3 / 2;
+	display: flex;
 	overflow: hidden;
 	border: solid;
+	align-items: center;
+	justify-content: center;
 }
 
 #group-photo {
-	/*margin-top: -10px;
-	margin-left: -10px;
-	margin: -100px 0px 0px -20px;*/
+    min-width: 100%;
+    min-height: 100%;
 }
