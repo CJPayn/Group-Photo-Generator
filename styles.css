@@ -55,8 +55,7 @@ p {
 	height: fill;
   	text-align: center;
 	margin-right: 0.5%;
-	flex: 0 0 150px;
-	overflow: scroll;
+	flex: 0 0 160px;
 	
 }
 
@@ -152,5 +151,4 @@ input {
 
 #group-photo {
     min-width: 100%;
-    min-height: 100%;
 }
