@@ -13,12 +13,6 @@
 	}
 }
 
-@media (max-width: 1200px) {
-	.app {
-		display: none;
-	}
-}
-
 body {
 	margin: 1% 3%;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
