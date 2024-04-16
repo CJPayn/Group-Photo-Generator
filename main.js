@@ -1,9 +1,4 @@
 // JavaScript Document
-
-function testFunction() {
-	console.log("Test Worked")
-}
-
 const photoFrame = document.getElementById("photo-frame")
 const oneCrestType = document.getElementById("crest-one")
 const twoCrestType = document.getElementById("crest-two")
@@ -21,7 +16,7 @@ let crestTy = ""
 let crestSel = ""
 let crest = ""
 let focus = false
-let selImage = document.getElementById("selected-image")
+//let selImage = document.getElementById("selected-image")
 let tgtImage = document.getElementById("group-photo")
 let rotationSlider = document.getElementById("rotate")
 let rotationSliderState = rotationSlider.value
@@ -172,31 +167,3 @@ function crestSelection(input) {
 		crestTwoPlace.src = `img/${crest}.png`
 	}
 }
-
-
-function printDiv(divName) {
-     var printContents = document.getElementById(divName).outerHTML;
-     var originalContents = document.body.innerHTML;
-
-     document.body.innerHTML = printContents;
-
-     //window.print();
-
-     //document.body.innerHTML = originalContents;
-}
-//rotationSlider.addEventListener("input", (event) => {
-//	rotationSliderState = rotationSlider.value
-//	if (zoomSliderState < (Math.abs(rotationSlider.value) * 3)) {
-//		zoomSlider.value = Math.abs(rotationSliderState) * 3
-//	}
-//	
-//	if (zoomSliderState < 10) {
-//		zoomSlider.value = `0${zoomSlider.value}`
-//	}
-//		zoomSlider.value = zoomSlider.value
-//  tgtImage.style.transform = `scale(1.${zoomSlider.value})  rotate(${rotationSliderState}deg)`
-//});
-
-
-//document.getElementById('fileInput').addEventListener('change', function(event) {
-  
