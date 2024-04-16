@@ -25,6 +25,9 @@ let zoomSliderState = zoomSlider.value
 let imagePosition = [0,0]
 let divEdit = ""
 let curClass = ""
+if (innerHeight < 815) {
+ document.getElementById("app").style.scale = (innerHeight / 800)-0.02
+}
 tgtImage.style.transform = `scale(1) rotate(0deg)`
 oneCrestSelection.style.display = "none"
 twoCrestSelection.style.display = "none"
