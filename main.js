@@ -9,21 +9,21 @@ const crestTwoPlace = document.getElementById("crest-two-place")
 const titleFontSlider = document.getElementById("names-h1-slider")
 const dateFontSlider = document.getElementById("names-h2-slider")
 const namesFontSlider = document.getElementById("names-p-slider")
+const rotationSlider = document.getElementById("rotate")
+const zoomSlider = document.getElementById("zoom")
 const today = new Date()
-let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] 
-document.getElementById("names-h2").innerHTML = `${today.getDate()} ${month[today.getMonth()]} ${today.getFullYear()}`
+const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] 
 let crestTy = ""
 let crestSel = ""
 let crest = ""
 let focus = false
 let tgtImage = document.getElementById("group-photo")
-let rotationSlider = document.getElementById("rotate")
 let rotationSliderState = rotationSlider.value
-let zoomSlider = document.getElementById("zoom")
 let zoomSliderState = zoomSlider.value
 let imagePosition = [0,0]
 let divEdit = ""
 let curClass = ""
+document.getElementById("names-h2").innerHTML = `${today.getDate()} ${month[today.getMonth()]} ${today.getFullYear()}`
 if (innerHeight < 815) {
  document.getElementById("app").style.scale = (innerHeight / 800)-0.02
  document.getElementById("app").scrollIntoView(true)

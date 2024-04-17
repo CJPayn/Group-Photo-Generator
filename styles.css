@@ -40,7 +40,7 @@ p {
 	padding-top: 20px;
 	border: 3px solid black;
 	border-radius: 10px;
-	height: fill;
+	height: 205mm;
   	text-align: center;
 	margin-right: 0.5%;
 	flex: 0 0 160px;
@@ -52,6 +52,7 @@ p {
 	border-radius: 7px;
   	padding: 6px 12px;
 	margin: 5px 0px 50px;
+	width: 120px;
   	cursor: pointer;
 }
 
@@ -75,10 +76,22 @@ p {
 }
 
 .drop-down {
-	margin: 3px 0px;
-	width: 90%;
-	border: 1.5px solid #222222;
+	margin: 5px 0px;
+	width: 120px;
+	border: 2px solid #222222;
 	border-radius: 4px;
+	padding: 2px;
+}
+
+#print-btn {
+	margin-top: 3px;
+	font-size: 17px;
+	border: 2px solid #222222;
+	border-radius: 7px;
+	padding: 5px;
+	background-color: white;
+	width: 120px;
+	cursor: pointer;
 }
 
 .mock-up {
@@ -90,6 +103,9 @@ p {
 	height: 210mm;
 }
 
+.crest {
+	width: 100%;
+}
 
 .badge-one {
 	align-self: flex-end;
@@ -99,9 +115,6 @@ p {
 	flex: 1;
 }
 
-.crest {
-	width: 100%;
-}
 .badge-two {
 	align-self: flex-end;
 	padding-bottom: 20px;
