@@ -16,7 +16,6 @@ let crestTy = ""
 let crestSel = ""
 let crest = ""
 let focus = false
-//let selImage = document.getElementById("selected-image")
 let tgtImage = document.getElementById("group-photo")
 let rotationSlider = document.getElementById("rotate")
 let rotationSliderState = rotationSlider.value
@@ -27,11 +26,19 @@ let divEdit = ""
 let curClass = ""
 if (innerHeight < 815) {
  document.getElementById("app").style.scale = (innerHeight / 800)-0.02
+ document.getElementById("app").scrollIntoView(true)
 }
 tgtImage.style.transform = `scale(1) rotate(0deg)`
 oneCrestSelection.style.display = "none"
 twoCrestSelection.style.display = "none"
 
+window.onresize = function(event) {
+    if (innerHeight < 815) {
+ document.getElementById("app").style.scale = (innerHeight / 800)-0.02
+ document.getElementById("app").scrollIntoView(true)
+}
+}
+	
 titleFontSlider.addEventListener("input", (event) => {
 	document.getElementById(`names-h1`).style.fontSize = titleFontSlider.value  + "px"
 });

@@ -1,14 +1,8 @@
 /* CSS Document */
-@media print{
-	@page {size: a4 landscape;}
-	
-	.mock-up {
-		position: fixed;
-		scale: 0.9;
-		top: -3%;
-	}
-	
-	.settings {
+
+
+@media (max-width: 1200px) {
+	.app {
 		display: none;
 	}
 }
@@ -105,6 +99,9 @@ p {
 	flex: 1;
 }
 
+.crest {
+	width: 100%;
+}
 .badge-two {
 	align-self: flex-end;
 	padding-bottom: 20px;
@@ -145,4 +142,23 @@ input {
 
 #group-photo {
     min-width: 100%;
+}
+
+@media print{
+	@page {size: a4 landscape;}
+	
+	/*.app {scale:2 !important;}*/
+	.mock-up {
+		position:fixed;
+		
+	width: 297mm;
+	height: 210mm;
+		scale: 0.95;
+		margin-top: -1.25%;
+		border: none !important;
+	}
+	
+	.settings {
+		display: none;
+	}
 }
